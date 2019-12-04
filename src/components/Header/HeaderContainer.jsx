@@ -28,4 +28,5 @@ const mapStateToProps = (state) => ({
     login: state.auth.login,
 });
 
+
 export default connect(mapStateToProps, {logout})(HeaderContainer);

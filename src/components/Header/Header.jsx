@@ -3,6 +3,7 @@ import s from './Header.module.css';
 import {NavLink} from "react-router-dom";
 import { YMInitializer } from 'react-yandex-metrika';
  
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';  import Grid from '@material-ui/core/Grid'; 
 
 const useStyles = makeStyles(theme => ({
@@ -43,6 +44,21 @@ const Header = (props) => {
         </Grid>
     </Grid> 
 </header>  
+
+
+const UserReadyLogin = ({ name, imgUrl }) => {
+    return (
+      <React.Fragment>
+        <p>Привет, {name}!</p>
+        <img src={imgUrl} alt="profle" />
+      </React.Fragment>
+    )
+  }
+  
+  UserReadyLogin.propTypes = {
+    name: PropTypes.string.isRequired,
+    imgUrl: PropTypes.string.isRequired,
+  }
 }
 
-export default Header;
+export default Header

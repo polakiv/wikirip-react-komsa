@@ -1,2 +1,1 @@
-# wikirip-react-komsa
-Викирип лью из комсольского компа
+# wikirip react project

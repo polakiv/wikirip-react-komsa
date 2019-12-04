@@ -4,7 +4,8 @@ import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import userPhoto from "../../../assets/images/user.png";
 import ProfileDataForm from "./ProfileDataForm";
-import { YMaps, Map } from 'react-yandex-maps';
+import Maps from "./Maps";
+//import { YMaps, Map } from 'react-yandex-maps';
  
 import { makeStyles } from '@material-ui/core/styles';  import Grid from '@material-ui/core/Grid'; 
 
@@ -51,7 +52,7 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
           ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} />
           : <ProfileData goToEditMode={() => { setEditMode(true) }} profile={profile} isOwner={isOwner} />}
 
-        <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
+<ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
       </Grid>
     </Grid>
   )
@@ -77,7 +78,7 @@ const ProfileData = ({ profile, isOwner, goToEditMode }) => {
      {/* {profile.mpn}
       <br></br>
       {profilempna}  {profilempnb}
-      <br></br>*/}
+      <br></br>
       <YMaps>
         
           <Map defaultState={{ 
@@ -87,7 +88,8 @@ const ProfileData = ({ profile, isOwner, goToEditMode }) => {
             height: 200,
             }} />
         
-      </YMaps>
+      </YMaps>*/}
+	  <Maps />
     </Grid>
   </Grid>
 }

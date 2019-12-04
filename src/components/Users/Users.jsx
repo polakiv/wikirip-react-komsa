@@ -58,16 +58,18 @@ const useStyles = makeStyles(theme => ({
 }));
 let Users = ({totalUsersCount, onPageChanged, users, ...props}) => {
     const classes = useStyles();
-     
+   //  debugger;
+   if((users) != null){
     return <div> 
         <div className='j4444'> 
-        <div className={classes.root} id='rootMain'>
-			<Searchrator onPageChanged={onPageChanged}
-                   totalItemsCount={totalUsersCount} /> {/* получение всех данных для блока пагинации(вверху стоит импорт) и распечатка блока пагинации Searchrator.jsx */}
-		</div>
+			<div className={classes.root} id='rootMain'>
+				<Searchrator onPageChanged={onPageChanged}
+					   totalItemsCount={totalUsersCount} /> {/* получение всех данных для блока пагинации(вверху стоит импорт) и распечатка блока пагинации Searchrator.jsx */}
+			</div>
 	
-	{/*  if (!users) users приходит в пропсах , прилетает сюда */}
+	{/*  if (users) users приходит в пропсах , прилетает сюда */}
 		{
+		 
 		users.map(u => <User user={u}
 							 followingInProgress={props.followingInProgress}
 							 key={u.id}
@@ -75,10 +77,13 @@ let Users = ({totalUsersCount, onPageChanged, users, ...props}) => {
 							 follow={props.follow}
 			/>
                 )
-		}{/* распечатка блока юзера, импорт из User.jsx подключен вверху */}
+		} 
         
-    </div>  
+			</div>  
    
-        </div>    
+        </div>  
+		} else {
+		return	<div className='j4444'> не найдено</div>
+			}
 }
 export default Users;

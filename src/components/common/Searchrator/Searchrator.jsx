@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styles from "./Searchrator.module.css";
 import cn from "classnames";
 
@@ -58,37 +58,35 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-let Searchrator = ({totalItemsCount, onPageChanged}) => { // onPageChanged приходит сюда в пропсах  и экспортируется через jsx в другие файлы...
+let Searchrator = ({ totalItemsCount, onPageChanged }) => { // onPageChanged приходит сюда в пропсах  и экспортируется через jsx в другие файлы...
 
-    const classes = useStyles(); 
-		
-	 let onNewSearchChange = (e) => {
-			let body = e.target.value;
-			onPageChanged(body);
-		}
-	//	debugger;
-    return <div className='Searchrator_searchrator'> 
-	<Paper className={classes.paper}>
-        <form className={classes.container} noValidate autoComplete="off">
-          <div className="jkl">
-            <div class="vivod">Всего найдено в базе: 332056</div>
-			
-            <TextField
-              id="outlined-basic"
-              className={classes.textField}
-              label="Поиск"
-              margin="normal"
-			   
-			  onChange={onNewSearchChange}
-              
-			  variant="outlined"
-            ></TextField> 
-          </div>
-        </form>
-      </Paper> 
-		 
-		 
-    </div>
+  const classes = useStyles();
+
+  let onNewSearchChange = (e) => {
+    let body = e.target.value;
+    onPageChanged(body);
+  }
+  //	debugger;
+  return <Grid className='Searchrator_searchrator'>
+    <Paper className={classes.paper}>
+      <form className={classes.container} noValidate autoComplete="off">
+        <Grid className="jkl">
+          <Grid className="vivod">Всего найдено в базе: 332056</Grid>
+
+          <TextField
+            id="outlined-basic"
+            className={classes.textField}
+            label="Поиск"
+            margin="normal"
+
+            onChange={onNewSearchChange}
+
+            variant="outlined"
+          ></TextField>
+        </Grid>
+      </form>
+    </Paper> 
+  </Grid>
 }
 
 export default Searchrator;

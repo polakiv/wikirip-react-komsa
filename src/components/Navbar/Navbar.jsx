@@ -21,7 +21,7 @@ const Navbar = () => {
     return (<Grid className="bottomnav">
         <nav className={s.nav}>
             <Grid className={`${s.item} ${s.active}`}>
-                <NavLink to="/" activeClassName={s.activeLink}>Главная</NavLink>
+                <NavLink exact to="/" activeClassName={s.activeLink}>Главная</NavLink>
             </Grid>
             <Grid className={`${s.item} ${s.active}`}>
                 <NavLink to="/signin" activeClassName={s.activeLink}>Войти</NavLink>

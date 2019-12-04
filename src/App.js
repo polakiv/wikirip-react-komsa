@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import UsersContainer from "./components/Users/UsersContainer";  
 import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp"; 
+import Addburial from "./components/Addburial/Addburial"; 
 
 
 import HeaderContainer from "./components/Header/HeaderContainer";
@@ -54,6 +55,8 @@ class App extends Component {
                         render={withSuspense(DialogsContainer)} />
                     <Route path='/profile/:userId?'
                         render={withSuspense(ProfileContainer)} /> 
+                    <Route path='/addburial'
+                        render={() => <Addburial />} />
                     <Route exact path='/'
                         render={() => <UsersContainer />} />
   
@@ -81,7 +84,7 @@ const WikiripJSApp = (props) => {
         <Provider store={store}>
             <AppContainer />
         </Provider>
-    </HashRouter>
+    </HashRouter> 
 }
 
 export default WikiripJSApp;
