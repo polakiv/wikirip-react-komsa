@@ -35,6 +35,9 @@ const Navbar = () => {
             <Grid className={`${s.item} ${s.active}`}>
                 <NavLink to="/dialogs" activeClassName={s.activeLink}>Messages</NavLink>
             </Grid>
+            <Grid className={`${s.item} ${s.active}`}>
+                <NavLink to="/addusersburial" activeClassName={s.activeLink}>Добавить эдюзерсбуриал</NavLink>
+            </Grid>
         </nav>
     </Grid>
     )

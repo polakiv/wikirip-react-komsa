@@ -13,7 +13,7 @@ let initialState = {
     users: [],
     pageSize: 10,
     totalUsersCount: 0,
-    currentPage: 1,
+    currentPage: "новосибирск",
     isFetching: true,
     followingInProgress: [],
     fake: 10

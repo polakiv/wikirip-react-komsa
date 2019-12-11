@@ -3,7 +3,9 @@
 html * {
   text-shadow: 0 1px 0 #FFF;
 }
-
+body { 
+    background-image: url(https://wikirip.site/css/top_bg.jpg);
+}
 .app { 
 } 
 .app-wrapper { 
@@ -15,11 +17,19 @@ html * {
   font-weight: 400;
   color: #766966;
   text-shadow: 0 1px 0 #FFF;
-  background-image: url(https://wikirip.site/css/top_bg.jpg);
 }
 .header { 
  
 }
+@media screen and (max-width: 600px) {
+.MuiPaper-root { 
+    width: 315px; 
+}
+#itemGrid .MuiButtonBase-root {
+  width: 100% !important; 
+  height: auto;
+} 
+} 
 h3.vivod {
   margin-top: 24px;
 }

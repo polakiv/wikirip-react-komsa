@@ -1,11 +1,12 @@
 import React from 'react';
 import s from './MyPosts.module.css';
-import Post from './Post/Post';
+import Post from './Post/Post'; // приходит распечатка готового текста
 import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../../utils/validators/validators";
 import {Textarea} from "../../common/FormsControls/FormsControls";
  
-import { makeStyles } from '@material-ui/core/styles';  import Grid from '@material-ui/core/Grid'; 
+import { makeStyles } from '@material-ui/core/styles';  
+import Grid from '@material-ui/core/Grid'; 
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -27,7 +28,7 @@ let AddNewPostForm = (props) => {
                    validate={[required, maxLength10]} />
         </Grid>
         <Grid>
-            <button>Add post</button>
+            <button>Add post2222222222</button>
         </Grid>
     </form>;
 }

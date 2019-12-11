@@ -58,7 +58,7 @@ let User = ({ user, followingInProgress, unfollow, follow }) => {
         <div className={classes.root} id='rootMain' key={user.id}>
             <Paper className={classes.paper}>
                 <Grid container spacing={2}>
-                    <Grid item>
+                    <Grid item id="itemGrid">
                         <ButtonBase className={classes.image}>
                             <NavLink to={'/profile/' + user.id}>
                                 <img className={classes.img}
@@ -74,16 +74,16 @@ let User = ({ user, followingInProgress, unfollow, follow }) => {
                                 <Typography variant="body2" gutterBottom>
                                     <NavLink to={'/profile/' + user.id}> {user.name}</NavLink>
                                 </Typography>
-                                <Typography variant="body2" color="textSecondary">
+                                { /*  <Typography variant="body2" color="textSecondary">
                                     <NavLink to={'/profile/' + user.id}>
                                         {user.mpn}
                                         {user.isbn}
                                     </NavLink>
-                                </Typography>
+                                     </Typography>*/}
                             </Grid>
                             <Grid item>
                                 <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                                    {/*user.followed
+                                {  user.followed
                                         ? <Fab
                                             onClick={() => { unfollow(user.id) }} aria-label="like" className={classes.fab}>
                                             <FavoriteIcon />
@@ -93,7 +93,7 @@ let User = ({ user, followingInProgress, unfollow, follow }) => {
                                             onClick={() => { follow(user.id) }} aria-label="like" className={classes.fab}>
                                             <FavoriteIcon />
 									</Fab>} 
-                                    {user.followed
+                                     {/* {user.followed
                                         ? <button
                                             onClick={() => { unfollow(user.id) }}>
                                             Убрать из списка</button>
@@ -101,13 +101,13 @@ let User = ({ user, followingInProgress, unfollow, follow }) => {
                                             .some(id => id === user.id)}
                                             onClick={() => { follow(user.id) }}>
                                             Это близкий мне человек</button>*/}
-											{user.followed
-                            ? <button  
-                                      onClick={() => { unfollow(user.id) }}>
-                                Unfollow</button> 
-                            : <button  
-                                      onClick={() => { follow(user.id) }}>
-                                      Follow</button>}{/* unfollow(user.id) 
+                                    {user.followed
+                                        ? <button
+                                            onClick={() => { unfollow(user.id) }}>
+                                            </button>
+                                        : <button
+                                            onClick={() => { follow(user.id) }}>
+                                            Это близкий мне человек</button>}{/* unfollow(user.id) 
 										  встречается:
 										  - в пропсах, присваемываех let User и на экспорт ,
 										  - в файле Users.jsx unfollow={props.unfollow},
@@ -119,7 +119,7 @@ let User = ({ user, followingInProgress, unfollow, follow }) => {
                         </Grid>
                         <Grid item>
                             <Typography variant="subtitle1">
-                                <NavLink to={'/profile/' + user.id}>{/*Цветы user.status*/}<img src="https://wikirip.site/image/flower/5.png" className="flower0"/> </NavLink>
+                                <NavLink to={'/profile/' + user.id}>{/*Цветы user.status*/}<img src="https://wikirip.site/image/flower/5.png" className="flower0" /> </NavLink>
                             </Typography>
                         </Grid>
                     </Grid>

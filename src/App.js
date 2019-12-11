@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css'; 
-import { HashRouter, Route, withRouter } from "react-router-dom";
+import { BrowserRouter, Route, withRouter } from "react-router-dom";
  
 import Navbar from './components/Navbar/Navbar'; 
 import UsersContainer from "./components/Users/UsersContainer";  
+import UsersBurialContainer from "./components/UsersBurial/UsersBurialContainer";  
 import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp"; 
-import Addburial from "./components/Addburial/Addburial"; 
+import Addburial from "./components/common/AddBurial/AddBurial"; 
 
 
 import HeaderContainer from "./components/Header/HeaderContainer";
@@ -64,6 +65,7 @@ class App extends Component {
                         render={() => <LoginPage />} />
                     <Route path='/signin' component={SignIn} />
                     <Route path='/signup' component={SignUp} /> 
+                    <Route path='/addusersburial' component={UsersBurialContainer} /> 
                     <Navbar />
                 </Grid>
             </Grid>
@@ -80,11 +82,11 @@ let AppContainer = compose(
     connect(mapStateToProps, { initializeApp }))(App);
 
 const WikiripJSApp = (props) => {
-    return <HashRouter >
+    return <BrowserRouter >
         <Provider store={store}>
             <AppContainer />
         </Provider>
-    </HashRouter> 
+    </BrowserRouter> 
 }
 
 export default WikiripJSApp;
